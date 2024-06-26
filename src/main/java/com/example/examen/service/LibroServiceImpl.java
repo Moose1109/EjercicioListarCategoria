@@ -21,6 +21,11 @@ public class LibroServiceImpl implements LibroService {
     }
 
     @Override
+    public List<Libro> listaPorCategoria(List<String> categories) {
+        return repository.listaPorCategoria(categories);
+    }
+
+    @Override
     public Libro agregarActualizarLibro(Libro objLibro) {
         return repository.save(objLibro);
     }
@@ -39,6 +44,8 @@ public class LibroServiceImpl implements LibroService {
     public List<Libro> listaPorTitulo(String titulo) {
         return repository.findByTitle(titulo);
     }
+
+   
 
     
 }
